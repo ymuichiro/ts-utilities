@@ -9,8 +9,7 @@
     "github": "https://github.com/ymuichiro/ts-utilities"
   },
   "scripts": {
-    "esb": "node ./esbuild/build.js",
-    "build": "node ./build.js && npx tsc"
+    "build": "node ./esbuild/build.js && npx tsc"
   },
   "devDependencies": {
     "esbuild": "^0.11.2",
