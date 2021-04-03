@@ -1,11 +1,23 @@
-# ts-package-develop-template
+# ts-utilities
 
-ESBuild による CommonJS パッケージ開発環境
-独自に開発する際に利用する
+Typescript 利用において頻繁に利用する関数群を定義する
 
-# Setup
+## Functional
 
-1. コードは src 配下に記述する
-2. コードの記述が完成次第、esbuild を実行
-3. 出力ファイルが正しく dist 配下に存在するか確認
-4. NPM もしくは、Github にアップロードし、パッケージとして利用
+パイプ処理等関数、関数型ライクな処理をする際に利用する関数群
+
+## Molding
+
+テキスト等の成型を行う
+
+## Tools
+
+その他関数群
+
+## TypeGuard
+
+型予測の絞り込みを行う
+
+## ValueCheck
+
+型判定を行う
