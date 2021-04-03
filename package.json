@@ -1,9 +1,13 @@
 {
-  "name": "ts-package-develop-template",
-  "description": "パッケージ開発のテンプレート",
+  "name": "ts-utilities",
+  "version": "0.0.2",
+  "description": "Typescript開発時によく利用する関数群",
   "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.js",
+  "repository": {
+    "github": "https://github.com/ymuichiro/ts-utilities"
+  },
   "scripts": {
     "esb": "node ./esbuild/build.js",
     "build": "node ./build.js && npx tsc"
