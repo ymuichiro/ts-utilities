@@ -28,11 +28,12 @@ export function createHashKey() {
  * 指定されたIndexを１つ上に移動する
  */
 export function swapUp<T>(array: T[], index: number): T[] {
+  const _ = [...array];
   if (index <= 0) {
-    return array;
+    return _;
   } else {
-    array.splice(index - 1, 2, array[index], array[index - 1]);
-    return array;
+    _.splice(index - 1, 2, _[index], _[index - 1]);
+    return _;
   }
 }
 
@@ -40,13 +41,13 @@ export function swapUp<T>(array: T[], index: number): T[] {
  * 指定されたIndexを１つ下に移動する
  */
 export function swapDown<T>(array: T[], index: number): T[] {
+  const _ = [...array];
   if (index < 0) {
-    return array;
-  } else if (array.length - 1 <= index) {
-    return array;
+    return _;
+  } else if (_.length - 1 <= index) {
+    return _;
   } else {
-    console.log(array.length);
-    array.splice(index, 2, array[index + 1], array[index]);
-    return array;
+    _.splice(index, 2, _[index + 1], _[index]);
+    return _;
   }
 }
