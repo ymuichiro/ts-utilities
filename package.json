@@ -9,10 +9,12 @@
     "github": "https://github.com/ymuichiro/ts-utilities"
   },
   "scripts": {
-    "build": "node ./esbuild/build.js && npx tsc"
+    "build": "node ./esbuild/build.js && npx tsc",
+    "test": "npx ts-node ./test/test.ts"
   },
   "devDependencies": {
     "esbuild": "^0.11.2",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
   },
   "files": [

@@ -64,13 +64,17 @@ var isZeroLength = (v) => {
 // src/lib/Functional/index.ts
 var Functional_exports = {};
 __export(Functional_exports, {
+  FunctionChain: () => FunctionChain,
   Pipe: () => Pipe
 });
 var Pipe = class {
   constructor(v) {
     this.v = v;
   }
-  log() {
+  log(text) {
+    if (text !== void 0) {
+      console.log(text);
+    }
     console.log(this.v);
     return this;
   }
@@ -80,6 +84,25 @@ var Pipe = class {
   }
   exit() {
     return this.v;
+  }
+};
+var FunctionChain = class {
+  constructor(v) {
+    this.data = v;
+  }
+  to(fc) {
+    const current = fc(this.data);
+    return new FunctionChain(current);
+  }
+  log(text) {
+    if (text !== void 0) {
+      console.log(text);
+    }
+    console.log(this.data);
+    return this;
+  }
+  exit() {
+    return this.data;
   }
 };
 
@@ -115,6 +138,7 @@ var toWordPadding = (v, digit, word) => {
 // src/lib/Tools/index.ts
 var Tools_exports = {};
 __export(Tools_exports, {
+  concatTwoDimensionalArray: () => concatTwoDimensionalArray,
   createHashKey: () => createHashKey,
   swapDown: () => swapDown,
   swapUp: () => swapUp,
@@ -141,21 +165,60 @@ function createHashKey() {
   return hash_key;
 }
 function swapUp(array, index) {
+  const _ = [...array];
   if (index <= 0) {
-    return array;
+    return _;
   } else {
-    array.splice(index - 1, 2, array[index], array[index - 1]);
-    return array;
+    _.splice(index - 1, 2, _[index], _[index - 1]);
+    return _;
   }
 }
 function swapDown(array, index) {
+  const _ = [...array];
   if (index < 0) {
-    return array;
-  } else if (array.length - 1 <= index) {
-    return array;
+    return _;
+  } else if (_.length - 1 <= index) {
+    return _;
   } else {
-    console.log(array.length);
-    array.splice(index, 2, array[index + 1], array[index]);
-    return array;
+    _.splice(index, 2, _[index + 1], _[index]);
+    return _;
   }
+}
+function concatTwoDimensionalArray(array1, array2, axis) {
+  const A1 = [...array1];
+  const A2 = [...array2];
+  const A3 = [];
+  if (axis === "x") {
+    const height = A1.length > A2.length ? A1.length : A2.length;
+    if (A1.length > A2.length) {
+      const row = new Array(A2[0].length).fill("");
+      const diff = new Array(height - A2.length).fill("");
+      diff.forEach((_) => A2.push(row));
+    } else if (A1.length === A2.length) {
+    } else {
+      const row = new Array(A1[0].length).fill("");
+      const diff = new Array(height - A1.length).fill("");
+      diff.forEach((_) => A1.push(row));
+    }
+    A1.forEach((_, i) => {
+      A3.push([...A1[i], ...A2[i]]);
+    });
+  } else {
+    const length = A1[0].length > A2[0].length ? A1[0].length : A2[0].length;
+    if (A1[0].length > A2[0].length) {
+      const diff = new Array(length - A2.length).fill("");
+      A2.forEach((_, i) => {
+        A2[i] = [...A2[i], ...diff];
+      });
+    } else if (A1[0].length === A2[0].length) {
+    } else {
+      const diff = new Array(length - A1.length).fill("");
+      A1.forEach((_, i) => {
+        A1[i] = [...A1[i], ...diff];
+      });
+    }
+    A1.forEach((row) => A3.push(row));
+    A2.forEach((row) => A3.push(row));
+  }
+  return A3;
 }
