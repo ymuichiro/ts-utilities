@@ -1,5 +1,10 @@
-/** 指定された時間関数の実行を待機する */
-export var throttle = function (fn, interval) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createHashKey = exports.throttle = void 0;
+/**
+ * 指定された時間関数の実行を待機する
+ */
+var throttle = function (fn, interval) {
     var lastTime = Date.now() - interval;
     return function () {
         if (lastTime + interval < Date.now()) {
@@ -8,12 +13,11 @@ export var throttle = function (fn, interval) {
         }
     };
 };
-/** メソッド名の一覧を取得する */
-export var nameof = function (name) { return name; };
+exports.throttle = throttle;
 /**
  * ランダムなHash値を取得する
  */
-export function createHashKey() {
+function createHashKey() {
     var digit = 100000000000;
     var randNums = [
         new Date().getTime(),
@@ -24,3 +28,4 @@ export function createHashKey() {
     randNums.forEach(function (byte) { return (hash_key += byte < 0 ? (byte += 256).toString(16) : byte.toString(16)); });
     return hash_key;
 }
+exports.createHashKey = createHashKey;

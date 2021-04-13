@@ -1,12 +1,15 @@
+"use strict";
 var __spreadArray = (this && this.__spreadArray) || function (to, from) {
     for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
         to[j] = from[i];
     return to;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.concatTwoDimensionalArray = exports.swapDown = exports.swapUp = void 0;
 /**
  * 指定されたIndexを１つ上に移動する
  */
-export function swapUp(array, index) {
+function swapUp(array, index) {
     var _ = __spreadArray([], array);
     if (index <= 0) {
         return _;
@@ -16,10 +19,11 @@ export function swapUp(array, index) {
         return _;
     }
 }
+exports.swapUp = swapUp;
 /**
  * 指定されたIndexを１つ下に移動する
  */
-export function swapDown(array, index) {
+function swapDown(array, index) {
     var _ = __spreadArray([], array);
     if (index < 0) {
         return _;
@@ -32,8 +36,9 @@ export function swapDown(array, index) {
         return _;
     }
 }
+exports.swapDown = swapDown;
 /** 2次元配列を結合する */
-export function concatTwoDimensionalArray(array1, array2, axis) {
+function concatTwoDimensionalArray(array1, array2, axis) {
     var A1 = __spreadArray([], array1);
     var A2 = __spreadArray([], array2);
     var A3 = [];
@@ -78,3 +83,4 @@ export function concatTwoDimensionalArray(array1, array2, axis) {
     }
     return A3;
 }
+exports.concatTwoDimensionalArray = concatTwoDimensionalArray;

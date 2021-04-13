@@ -1,1 +1,2 @@
-import { Tools } from '../src/index';
+import { Array } from '../dist/index';
+console.log(Array.concatTwoDimensionalArray);

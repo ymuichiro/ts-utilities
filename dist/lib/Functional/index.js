@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FunctionChain = exports.Pipe = void 0;
 /** 型を保持したまま、処理を行うパイプ処理を提供する */
 var Pipe = /** @class */ (function () {
     function Pipe(v) {
@@ -22,7 +25,7 @@ var Pipe = /** @class */ (function () {
     };
     return Pipe;
 }());
-export { Pipe };
+exports.Pipe = Pipe;
 /**
  * 処理途中で型の変更が可能なパイプ処理を提供する
  * (関数合成はFunctionChainを通常の関数でラップする)
@@ -47,4 +50,4 @@ var FunctionChain = /** @class */ (function () {
     };
     return FunctionChain;
 }());
-export { FunctionChain };
+exports.FunctionChain = FunctionChain;

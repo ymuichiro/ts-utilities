@@ -12,11 +12,6 @@ export const throttle = (fn: any, interval: number) => {
 };
 
 /**
- * メソッド名の一覧を取得する
- */
-export const nameof = <T>(name: keyof T) => name;
-
-/**
  * ランダムなHash値を取得する
  */
 export function createHashKey() {
