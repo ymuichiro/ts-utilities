@@ -22,3 +22,8 @@ export * as Molding from './lib/Molding/index';
  * Utility
  */
 export * as Tools from './lib/Tools/index';
+
+/**
+ * 配列を操作する
+ */
+export * as Array from './lib/Array/index';

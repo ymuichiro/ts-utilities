@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.js",
   "repository": {
-    "github": "https://github.com/ymuichiro/ts-utilities"
+    "url": "https://github.com/ymuichiro/ts-utilities"
   },
   "scripts": {
     "build": "node ./esbuild/build.js && npx tsc",
