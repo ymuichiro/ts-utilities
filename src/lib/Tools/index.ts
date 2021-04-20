@@ -25,3 +25,8 @@ export function createHashKey() {
   randNums.forEach(byte => (hash_key += byte < 0 ? (byte += 256).toString(16) : byte.toString(16)));
   return hash_key;
 }
+
+/**
+ * メソッド名一覧を取得する
+ */
+export const nameof = <T>(name: keyof T) => name;
