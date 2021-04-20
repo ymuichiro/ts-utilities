@@ -10,3 +10,7 @@ export declare function createHashKey(): string;
  * メソッド名一覧を取得する
  */
 export declare const nameof: <T>(name: keyof T) => keyof T;
+/**
+ * クラスのメソッド一覧を返す
+ */
+export declare const getMethod: <T, U extends keyof T>(obj: T, key: U) => U;

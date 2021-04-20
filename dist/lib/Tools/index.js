@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.nameof = exports.createHashKey = exports.throttle = void 0;
+exports.getMethod = exports.nameof = exports.createHashKey = exports.throttle = void 0;
 /**
  * 指定された時間関数の実行を待機する
  */
@@ -34,3 +34,8 @@ exports.createHashKey = createHashKey;
  */
 var nameof = function (name) { return name; };
 exports.nameof = nameof;
+/**
+ * クラスのメソッド一覧を返す
+ */
+var getMethod = function (obj, key) { return key; };
+exports.getMethod = getMethod;

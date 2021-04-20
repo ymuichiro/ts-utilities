@@ -1,6 +1,6 @@
 {
   "name": "ts-utilities",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Typescript開発時によく利用する関数群",
   "private": true,
   "main": "dist/index.js",

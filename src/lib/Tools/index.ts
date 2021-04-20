@@ -30,3 +30,9 @@ export function createHashKey() {
  * メソッド名一覧を取得する
  */
 export const nameof = <T>(name: keyof T) => name;
+
+/**
+ * クラスのメソッド一覧を返す
+ */
+export const getMethod = <T, U extends keyof T>(obj: T, key: U): U => key;
+
