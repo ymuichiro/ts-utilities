@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "node ./esbuild/build.js && npx tsc",
-    "test": "npx ts-node ./test/test.ts"
+    "test": "npx node ./test/test.js"
   },
   "devDependencies": {
     "esbuild": "^0.11.2",

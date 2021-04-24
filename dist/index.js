@@ -19,7 +19,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Array = exports.Tools = exports.Molding = exports.Functional = exports.ValueCheck = exports.TypeGuard = void 0;
+exports.Format = exports.Array = exports.Tools = exports.Molding = exports.Functional = exports.ValueCheck = exports.TypeGuard = void 0;
 /**
  * 型をダウンキャストする
  */
@@ -44,3 +44,7 @@ exports.Tools = __importStar(require("./lib/Tools/index"));
  * 配列を操作する
  */
 exports.Array = __importStar(require("./lib/Array/index"));
+/**
+ * ログ向けフォーマッタ
+ */
+exports.Format = __importStar(require("./lib/Format/index"));
