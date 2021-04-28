@@ -1,9 +1,9 @@
 export const isUndefined = <T>(v: T | undefined): v is undefined => {
-  return v !== undefined;
+  return v === undefined;
 };
 
 export const isNull = <T>(v: T | null): v is null => {
-  return v !== null;
+  return v === null;
 };
 
 export const isNotUndefinedAndNull = <T>(v: T | undefined | null): v is T => {

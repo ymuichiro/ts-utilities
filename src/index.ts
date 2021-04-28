@@ -26,7 +26,7 @@ export * as Tools from './lib/Tools/index';
 /**
  * 配列を操作する
  */
-export * as Array from './lib/Array/index';
+export * as ArrayAction from './lib/ArrayAction/index';
 
 /**
  * ログ向けフォーマッタ

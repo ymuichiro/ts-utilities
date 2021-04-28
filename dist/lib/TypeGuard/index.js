@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isUndefinedOrNullError = exports.switchNull = exports.switchUndefined = exports.isNotUndefinedAndNull = exports.isNull = exports.isUndefined = void 0;
 var isUndefined = function (v) {
-    return v !== undefined;
+    return v === undefined;
 };
 exports.isUndefined = isUndefined;
 var isNull = function (v) {
-    return v !== null;
+    return v === null;
 };
 exports.isNull = isNull;
 var isNotUndefinedAndNull = function (v) {
