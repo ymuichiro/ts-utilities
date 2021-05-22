@@ -5,34 +5,31 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
     return to;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.concatTwoDimensionalArray = exports.swapDown = exports.swapUp = void 0;
+exports.insertValueInBetween = exports.concatTwoDimensionalArray = exports.swapDown = exports.swapUp = void 0;
 /**
- * 指定されたIndexを１つ上に移動する
+ * 指定されたIndexの位置を1つ大きい側に移動する
  */
 function swapUp(array, index) {
     var _ = __spreadArray([], array);
-    if (index <= 0) {
+    if (index < 0 || index > array.length - 2) {
         return _;
     }
     else {
-        _.splice(index - 1, 2, _[index], _[index - 1]);
+        _.splice(index, 2, _[index + 1], _[index]);
         return _;
     }
 }
 exports.swapUp = swapUp;
 /**
- * 指定されたIndexを１つ下に移動する
+ * 指定されたIndexを１つ小さい側に移動する
  */
 function swapDown(array, index) {
     var _ = __spreadArray([], array);
-    if (index < 0) {
-        return _;
-    }
-    else if (_.length - 1 <= index) {
+    if (index <= 0 || index > array.length - 1) {
         return _;
     }
     else {
-        _.splice(index, 2, _[index + 1], _[index]);
+        _.splice(index - 1, 2, _[index], _[index - 1]);
         return _;
     }
 }
@@ -84,3 +81,10 @@ function concatTwoDimensionalArray(array1, array2, axis) {
     return A3;
 }
 exports.concatTwoDimensionalArray = concatTwoDimensionalArray;
+/** 配列の途中に値を挿入する */
+function insertValueInBetween(arr, position, insertValue) {
+    return __spreadArray(__spreadArray(__spreadArray([], arr.slice(0, position)), [
+        insertValue
+    ]), arr.slice(position));
+}
+exports.insertValueInBetween = insertValueInBetween;

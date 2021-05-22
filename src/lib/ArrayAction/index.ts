@@ -1,27 +1,25 @@
 /**
- * 指定されたIndexを１つ上に移動する
+ * 指定されたIndexの位置を1つ大きい側に移動する
  */
 export function swapUp<T>(array: T[], index: number): T[] {
   const _ = [...array];
-  if (index <= 0) {
+  if (index < 0 || index > array.length - 2) {
     return _;
   } else {
-    _.splice(index - 1, 2, _[index], _[index - 1]);
+    _.splice(index, 2, _[index + 1], _[index]);
     return _;
   }
 }
 
 /**
- * 指定されたIndexを１つ下に移動する
+ * 指定されたIndexを１つ小さい側に移動する
  */
 export function swapDown<T>(array: T[], index: number): T[] {
   const _ = [...array];
-  if (index < 0) {
-    return _;
-  } else if (_.length - 1 <= index) {
+  if (index <= 0 || index > array.length - 1) {
     return _;
   } else {
-    _.splice(index, 2, _[index + 1], _[index]);
+    _.splice(index - 1, 2, _[index], _[index - 1]);
     return _;
   }
 }
@@ -69,4 +67,13 @@ export function concatTwoDimensionalArray<T>(array1: T[][], array2: T[][], axis:
   }
 
   return A3;
+}
+
+/** 配列の途中に値を挿入する */
+export function insertValueInBetween<T>(arr: T[], position: number, insertValue: T): T[] {
+  return [
+    ...arr.slice(0, position),
+    insertValue,
+    ...arr.slice(position),
+  ]
 }
